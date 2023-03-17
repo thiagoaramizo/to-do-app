@@ -1,0 +1,80 @@
+.task {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--gray-500);
+    border: 1px solid var(--gray-400);
+    border-radius: 8px;
+    font-size: var(--font-medium);
+    color: var(--gray-100);
+}
+
+.task > input[type=checkbox] {
+    display: block;
+    width: calc(1rem + 1px);
+    height: calc(1rem + 1px);
+    all: unset;
+    border-radius: 50%;
+    background: transparent ;
+}
+
+.task > input[type=checkbox]:before {
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    margin-left: -1px;
+    margin-top: -1px;
+    display: block;
+    border: 1px solid var(--blue);
+    border-radius: 50%;
+    background: transparent;
+    transition: background-color 0.3s, border-color 0.3s;
+    cursor: pointer;
+}
+
+.task > input[type=checkbox]:hover:before {
+    border-color: var(--blue-dark);
+}
+
+.task > input[type=checkbox]:focus:before {
+    outline: 1px solid var(--gray-500); 
+    box-shadow: 0 0 0px 2px var(--purple-dark);
+}
+
+.task > input[type=checkbox]:checked:before {
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.43059 0.342123L4.09865 4.67406L1.61618 2.19159L0.780273 3.0275L4.09865 6.34587L9.26649 1.17803L8.43059 0.342123Z' fill='%23F2F2F2'/%3E%3C/svg%3E%0A");
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-color: var(--purple-dark);
+    background-position: center 0.275rem;
+    border-color: var(--purple-dark);
+}
+
+.task > input[type=checkbox]:checked:hover:before {
+    background-color: var(--purple);
+    border-color: var(--purple);
+}
+
+.task > button {
+    background: transparent;
+    border: 0;
+    color: var(--gray-300);
+    cursor: pointer;
+    line-height: 0;
+    padding: 5px;
+    border-radius: 4px;
+    transition: color 0.5s, background-color 0.5s;
+}
+
+.task > button:hover {
+    color: var(--danger);
+    background-color: var(--gray-400);
+}
+
+
+.finished {
+    text-decoration: line-through;
+    color: var(--gray-300);
+}
